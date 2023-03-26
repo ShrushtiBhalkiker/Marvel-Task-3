@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .container{
+        margin-left: 10rem;
+        font-size: 2rem;
+        color: whitesmoke;
+    }
+
+    body{
+        background-image: url(maggie.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+    }
+
+    #one{
+        font-size: 5rem;
+        color: rgb(239, 210, 79);
+       /* margin-left: 20rem; */
+    }
+
+    
+</style>
+<body>
+
+    <div class="container">
+<h1 id="one">Maggie :) </h1><br>
+Enter the number of people <br> <input type="number" id="num"><br>
+
+    <p id="p11"></p>
+    <p id="p12"></p>
+    
+   
+    <button  onclick="recipe1(document.getElementById('num').value)">Recipe</button>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+        <p id="p6"></p>
+        <p id="p7"></p>
+        <p id="p8"></p>
+        <p id="p9"></p>
+        <p id="p10"></p>
+    </div>
+    <script>
+        function recipe1(num){
+            let p = new Promise((resolve, reject) => {
+        if(num==0){
+            resolve('Success');
+        }else{
+            reject('failed')
+        }
+    }
+    )
+
+    p.then((messege) => {
+        document.getElementById("p11").innerHTML="please provide the amount which is greater than 0 to prepare its recipe";
+    }).catch((messege) =>{
+        // document.getElementById("p12").innerHTML="take a beaker";
+    // })
+
+        document.getElementById("p1").innerHTML="take a beaker";
+        document.getElementById("p2").innerHTML="with using a 100ml vessel pour water "+num+" times.";
+        document.getElementById("p3").innerHTML="open the maggie packets";
+        document.getElementById("p4").innerHTML="add the taste maker";
+        document.getElementById("p5").innerHTML="add "+ Math.floor(num/2)+" choped small tomatoes";
+        document.getElementById("p6").innerHTML="add "+ Math.floor(num/3)+" choped onion";
+        document.getElementById("p7").innerHTML="add "+ Math.floor(num/4)+" tea spoon of salt";
+        document.getElementById("p8").innerHTML="add noddles in it";
+        document.getElementById("p9").innerHTML="stir well. ";
+        document.getElementById("p10").innerHTML="and wait for "+num*5+"min to get that cook well";
+    })
+        }
+    </script>
+</body>
+</html> 
